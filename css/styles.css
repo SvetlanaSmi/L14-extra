@@ -25,8 +25,7 @@
     /* display: none; */
 }
 
-.button label::before,
-.button label::after {
+.button label{
     display: block;
     font-size: 2em;
     background-color: rgba(207, 148, 148, 0.61);
@@ -35,36 +34,40 @@
     text-align: center;
     border-radius: 50%;
     cursor: pointer;
+    
    
 }
 .button label[for="check1"]::before {
-    content: "\0034";   
+    content: "\0034"; 
 }
-.button label[for="check1"]::after {
-    content: "\0032"; 
+.button label+label[for="check1"]::before {
+    content: "\0033";  
+}
+
+div.button label+label[for="check2"]::before {
+    content: "\0032";   
 }
 .button label[for="check2"]::before {
-    content: "\0033";   
-}
-.button label[for="check2"]::after {
     content: "\0031"; 
 }
 
-.button input:checked~label[for="check1"]::before{
-    display: none;   
+
+
+
+.button input:first-child:checked~label[for="check1"]::before {
+    content: "\0033"; 
 }
-.button input:checked~label[for="check1"]::after {
-    content: "\0033";
+.button input:first-child:checked~label[for="check1"] {
+    display: none;  
+}
+
+div.button input:nth-child(2):checked+label+label[for="check2"]{
+    display: none;
 }
 
 
-/* .button input:checked~label[for="check2"]::before {
-    display: none;   
-}
-.button input:checked~label[for="check2"]::after {
-    content: "\0031"; 
-      
-} */
+
+
 
 
 
