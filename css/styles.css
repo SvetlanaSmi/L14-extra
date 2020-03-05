@@ -18,11 +18,11 @@
     margin: 100px;
     display: block;
     cursor: pointer;  
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .button input {
-    /* display: none; */
+    display: none;
 }
 
 .button label{
