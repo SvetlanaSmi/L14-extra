@@ -28,7 +28,7 @@
 .button label{
     display: block;
     font-size: 2em;
-    background-color: rgba(207, 148, 148, 0.61);
+    /* background-color: rgba(207, 148, 148, 0.61); */
     min-width: 48px;
     height: 48px;
     text-align: center;
@@ -37,33 +37,47 @@
     
    
 }
-.button label[for="check1"]::before {
-    content: "\0034"; 
-}
-.button label+label[for="check1"]::before {
-    content: "\0033";  
-}
 
-div.button label+label[for="check2"]::before {
-    content: "\0032";   
-}
-.button label[for="check2"]::before {
-    content: "\0031"; 
-}
-
-
-
-
-.button input:first-child:checked~label[for="check1"]::before {
-    content: "\0033"; 
-}
-.button input:first-child:checked~label[for="check1"] {
-    display: none;  
-}
-
-div.button input:nth-child(2):checked+label+label[for="check2"]{
+#check1:not(:checked)+#check2:not(:checked)~label[for="check1"]::before {
+    content: "4";
+} 
+#check1:checked+#check2:not(:checked)~label[for="check1"] {
     display: none;
 }
+#check1:checked+#check2:not(:checked)~label[for="check2"]::before {
+    content: "3";
+}
+
+#check1:checked+#check2:checked~label[for="check1"]::before {
+    content: "2";
+}
+#check1:checked+#check2:checked~label[for="check2"]::before {
+    content: "1";
+}
+
+#check1:not(:checked)+#check2:checked~label[for="check1"] {
+    display: none;
+}
+#check1:not(:checked)+#check2:checked~label[for="check2"]::before {
+    content: "1";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
