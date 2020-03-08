@@ -41,9 +41,9 @@
 #check1:not(:checked)+#check2:not(:checked)~label[for="check1"]::before {
     content: "4";
 } 
-#check1:checked+#check2:not(:checked)~label[for="check1"] {
+/* #check1:checked+#check2:not(:checked)~label[for="check1"] {
     display: none;
-}
+} */
 #check1:checked+#check2:not(:checked)~label[for="check2"]::before {
     content: "3";
 }
@@ -51,13 +51,11 @@
 #check1:checked+#check2:checked~label[for="check1"]::before {
     content: "2";
 }
-#check1:checked+#check2:checked~label[for="check2"]::before {
-    content: "1";
-}
 
-#check1:not(:checked)+#check2:checked~label[for="check1"] {
+
+/* #check1:not(:checked)+#check2:checked~label[for="check1"] {
     display: none;
-}
+} */
 #check1:not(:checked)+#check2:checked~label[for="check2"]::before {
     content: "1";
 }
